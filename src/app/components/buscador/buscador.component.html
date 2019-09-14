@@ -1,0 +1,111 @@
+<br><br>
+
+<div class="row">
+
+
+    <div class="col-sm">
+        <button type="button" class="btn btn-primary btn-block" (click)="navigateHome()">Home</button>
+    </div>
+
+</div>
+
+
+
+
+<br><br>
+
+<div class="row animiated fadeIn fast" *ngIf="this.resultados.length==0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert"> No Existen Resultados con el término {{termino}}
+
+        </div>
+    </div>
+</div>
+
+<div *ngIf="this.resultados.length !=0">
+
+
+    <div class="row">
+
+        <div *ngFor="let item of indice2; let i=index" class="col-4">
+
+
+            <div *ngIf="indexValue(i,3)">
+
+
+                <div class="card puntero" (click)="verPelicula(i)">
+                    <img src={{peliculaFoto(i)}} class="card-img-top " data-toggle="tooltip" data-placement="bottom" title="Rating = {{this.resultados[i].vote_average}} Popularity = {{this.resultados[i].popularity}}">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{ this.resultados[i].title}}</h5>
+                        <span class="badge ">
+                                        {{this.resultados[i].release_date}}
+                                </span>
+                        <p class="card-text">{{this.resultados[i].overview}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div *ngFor="let item of indice2; let i=index" class="col-4">
+
+
+            <div *ngIf="indexValue2(i)">
+
+
+                <div class="card puntero" (click)="verPelicula(i)">
+                    <img src={{peliculaFoto(i)}} class="card-img-top " data-toggle="tooltip" data-placement="bottom" title="Rating = {{this.resultados[i].vote_average}} Popularity = {{this.resultados[i].popularity}}">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{ this.resultados[i].title}}</h5>
+                        <span class="badge ">
+                                            {{this.resultados[i].release_date}}
+                                    </span>
+                        <p class="card-text">{{this.resultados[i].overview}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div *ngFor="let item of indice2; let i=index" class="col-4">
+
+
+            <div *ngIf="indexValue3(i)">
+
+
+                <div class="card puntero" (click)="verPelicula(i)">
+                    <img src={{peliculaFoto(i)}} class="card-img-top " data-toggle="tooltip" data-placement="bottom" title="Rating = {{this.resultados[i].vote_average}} Popularity = {{this.resultados[i].popularity}}">
+
+                    <div class="card-body">
+
+                        <h5 class="card-title">{{ this.resultados[i].title}}</h5>
+                        <span class="badge ">
+                                                {{this.resultados[i].release_date}}
+                                        </span>
+                        <p class="card-text">{{this.resultados[i].overview}}</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,116 @@
+<br><br>
+
+<div class="row">
+
+    <div class="col-2">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Mejores en
+                        </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" [ngClass]="{'active': this._moviesService.cache == 4}" type="button" (click)="cambio2019()">2019</button>
+                <button class="dropdown-item" [ngClass]="{'active': this._moviesService.cache == 5}" type="button" (click)="cambio2018()">2018</button>
+                <button class="dropdown-item" [ngClass]="{'active': this._moviesService.cache == 6}" type="button" (click)="cambio2017()">2017</button>
+                <button class="dropdown-item" [ngClass]="{'active': this._moviesService.cache == 7}" type="button" (click)="cambio2016()">2016</button>
+                <button class="dropdown-item" [ngClass]="{'active': this._moviesService.cache == 8}" type="button" (click)="cambio2015()">2015</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm">
+        <div>
+            <button type="button" aria-pressed="true" [ngClass]="{'active': this._moviesService.cache == 1}" class="btn btn-primary btn-block" (click)="cambioPopulares()">Populares</button>
+        </div>
+
+    </div>
+    <div class="col-sm">
+        <button type="button" class="btn btn-primary btn-block" aria-pressed="true" [ngClass]="{'active': this._moviesService.cache == 2}" (click)="cambioTeatro()">Teatros</button>
+    </div>
+    <div class="col-sm">
+        <button type="button" class="btn btn-primary btn-block" aria-pressed="true" [ngClass]="{'active': this._moviesService.cache == 3}" (click)="cambioNinos()">Niños</button>
+    </div>
+</div>
+<br><br>
+
+
+
+<div class="row">
+
+    <div *ngFor="let item of indice2; let i=index" class="col-4">
+
+
+        <div *ngIf="indexValue(i,3)">
+
+
+            <div class="card puntero" (click)="verPelicula(i)">
+                <img src={{peliculaFoto(i)}} class="card-img-top " data-toggle="tooltip" data-placement="bottom" title="Rating = {{this.resultados[i].vote_average}} Popularity = {{this.resultados[i].popularity}}">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">{{ this.resultados[i].title}}</h5>
+                    <span class="badge ">
+                            {{this.resultados[i].release_date}}
+                    </span>
+                    <p class="card-text">{{this.resultados[i].overview}}</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div *ngFor="let item of indice2; let i=index" class="col-4">
+
+
+        <div *ngIf="indexValue2(i)">
+
+
+            <div class="card puntero" (click)="verPelicula(i)">
+                <img src={{peliculaFoto(i)}} class="card-img-top " data-toggle="tooltip" data-placement="bottom" title="Rating = {{this.resultados[i].vote_average}} Popularity = {{this.resultados[i].popularity}}">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">{{ this.resultados[i].title}}</h5>
+                    <span class="badge ">
+                                {{this.resultados[i].release_date}}
+                        </span>
+                    <p class="card-text">{{this.resultados[i].overview}}</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div *ngFor="let item of indice2; let i=index" class="col-4">
+
+
+        <div *ngIf="indexValue3(i)">
+
+
+            <div class="card puntero" (click)="verPelicula(i)">
+                <img src={{peliculaFoto(i)}} class="card-img-top " data-toggle="tooltip" data-placement="bottom" title="Rating = {{this.resultados[i].vote_average}} Popularity = {{this.resultados[i].popularity}}">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">{{ this.resultados[i].title}}</h5>
+                    <span class="badge ">
+                                    {{this.resultados[i].release_date}}
+                            </span>
+                    <p class="card-text">{{this.resultados[i].overview}}</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

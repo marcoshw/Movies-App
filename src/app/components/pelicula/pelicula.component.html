@@ -1,0 +1,55 @@
+<br><br>
+<div class="col-sm">
+    <button type="button" class="btn btn-primary btn-block" (click)="volver()">Volver</button>
+</div>
+<br><br>
+
+<div class="row">
+
+    <div class="col-6">
+        <img src="https://image.tmdb.org/t/p/w500{{this._moviesService.peiculaTemporal.poster_path}}" class="card-img-top" data-toggle="tooltip" data-placement="bottom">
+    </div>
+
+    <div class="col-6">
+
+        <h1>{{this._moviesService.peiculaTemporal.title}}
+            <br>
+            <small class="text-muted">{{this._moviesService.peiculaTemporal.original_title}}</small>
+        </h1>
+        <br> <br>
+        <p class="lead">
+            {{this._moviesService.peiculaTemporal.overview}}
+        </p>
+
+        <dl class="row">
+            <dt class="col-sm-6">Popularidad</dt>
+            <br>
+            <dd class="col-sm-10">{{this._moviesService.peiculaTemporal.popularity}}</dd>
+        </dl>
+
+
+        <dl class="row">
+            <dt class="col-sm-6">Promedio de Votos</dt>
+            <br>
+            <dd class="col-sm-10">{{this._moviesService.peiculaTemporal.vote_average}}</dd>
+        </dl>
+
+
+        <dl class="row">
+            <dt class="col-sm-6">Cantidad de Votos</dt>
+            <br>
+            <dd class="col-sm-10">{{this._moviesService.peiculaTemporal.vote_count}}</dd>
+        </dl>
+
+
+        <dl class="row">
+            <dt class="col-sm-6">Fecha de Estreno</dt>
+            <br>
+            <dd class="col-sm-10">{{this._moviesService.peiculaTemporal.release_date}}</dd>
+        </dl>
+
+
+
+    </div>
+
+</div>
